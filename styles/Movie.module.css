@@ -1,0 +1,54 @@
+#main {
+    background-image: url('/cinema.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.movie {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: rgba(39, 39, 39, 0.753);
+    color: white;
+    margin-top: 3%;
+    padding: 1%;
+}
+
+.img {
+    width: 23vw;
+    margin-left: 10%;
+    border-radius: 6px;
+}
+
+.movieInfos {
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+.movieInfos h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+
+.movieInfos p {
+    border-bottom: 1px solid white;
+    padding: 1%;
+}
+
+.page {
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color: rgba(0, 0, 0, 0.658);
+    border: 1px solid rgba(255, 255, 255, 0.411);
+}
+
+.video {
+    border: 1px solid white;
+    border-radius: 6px;
+    width: 100%;
+    margin: 0.2%;
+    margin-top: 1%;
+    margin-bottom: 10%;
+}

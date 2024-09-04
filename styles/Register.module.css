@@ -1,0 +1,30 @@
+.container{
+    background-color: aqua;
+    height: 600px;
+    width: 600px;
+    margin-left: 28%;
+    border: 1px solid grey;
+    border-radius: 8px;
+    margin-top: 70px;
+    padding: 2%;
+    box-shadow: 10px 10px 10px 10px;
+    font-size: 30px;
+
+}
+.button{
+    margin-left: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: azure;
+    border-radius: 20px;
+    width: 20%;
+    height: 16%;
+    
+}
+.button:hover{
+    background-color: rgb(207, 211, 211);
+    cursor: pointer;
+}
+#main{
+    background-image: url('/pipoca.jpg');
+    background-size: cover;
+}
