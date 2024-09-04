@@ -1,4 +1,4 @@
-import { prisma } from "@/db";
+import { prisma } from "@/";
 
 export async function createrusermodel( _name:string , _username:string , _password:string , _cpf:string) {
     const user= await prisma.user.create({ 
