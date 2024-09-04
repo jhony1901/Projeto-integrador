@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import Style from '@/styles/register.module.css';
+=======
+import Style from '@/styles/Register.module.css';
+>>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 import Head from 'next/head';
 import { useState } from 'react';
 import Link from 'next/link';
 import { getCookie } from 'cookies-next';
+<<<<<<< HEAD
 import { checktoken } from '@/Services/TokenConfig';
+=======
+//import { checktoken } from '@/services/tokenConfig';
+>>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 import { useRouter } from 'next/router';
 
 export default function registerpage() {
@@ -86,7 +94,11 @@ export function getServerSideProps( {req , res }:any){
             throw new Error ('invaled token');
         }
 
+<<<<<<< HEAD
         checktoken(token);
+=======
+       // checktoken(token);
+>>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 
         return {
             redirect: {
