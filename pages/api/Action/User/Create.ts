@@ -7,9 +7,9 @@ export default async ( req : NextApiRequest, res : NextApiResponse) =>{
         return res.status(403).json({message : 'method not allowed'});
     }
     
-    const { name , username, password ,confirmpassword ,cpf} = req.body;
+    const { name , username, password ,email,confirmpassword ,cpf} = req.body;
 
-    const response : any = await createUser(username , password ,confirmpassword ,cpf ,name );
+    const response : any = await createUser(username , password ,email ,confirmpassword , cpf ,name );
 
     return res.status( response.status).json( {message : response.message});
 }

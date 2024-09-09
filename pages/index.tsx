@@ -1,6 +1,6 @@
 
 import { getCookie } from "cookies-next";
-//import { checktoken } from "@/services/tokenConfig";
+import { checktoken } from "@/Services/TokenConfig";
 import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from 'react';
 import Link from "next/link";
@@ -105,7 +105,7 @@ export function getServerSideProps({ req, res }: any) {
       throw new Error('invaled token');
     }
 
- //   checktoken(token);
+    checktoken(token);
 
     return {
       props: {}
@@ -116,7 +116,7 @@ export function getServerSideProps({ req, res }: any) {
     return {
       redirect: {
         permanent: false,
-        destination: '/user/login',
+        destination: '/',
       },
       props: {}
 

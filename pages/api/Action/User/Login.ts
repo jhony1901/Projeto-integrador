@@ -6,15 +6,15 @@ export default async ( req : NextApiRequest, res : NextApiResponse) =>{
         return res.status(403).json({message : 'method not allowed'});
     }
    
-    const{username , password} = req.body;
+    const{username , password , email} = req.body;
 
-    const response = await login(username , password);
+    const response = await login(username , password , email);
 
 
-   // if (response.status == 200){
-   //     return res.status(response.status).json({message : response.message , token : response.token });
+    if (response.status == 200){
+        return res.status(response.status).json({message : response.message , token : response.token });
     }
-//    else{
-//        return res.status( response.status ).json( { message: response.message});
- //   }
-//}
+   else{
+       return res.status( response.status ).json( { message: response.message});
+    }
+}

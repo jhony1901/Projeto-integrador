@@ -4,22 +4,29 @@
     border-radius: 10px;
     padding: 20%;
     margin-top: 1px;
-    border: 1px solid gray;
-    background-color: black;
-<<<<<<< HEAD
-=======
-  
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
-    background-size: cover;
+    border: 2px solid black;
+    background-image: url('/dino2.jpg');
+    background-size: contain;
+    height: 97vh;
+    margin-top: 1%;
+    
 }
+
+.title{
+    color: black;
+}
+
+
 .Nome{
    border-radius: 2px;
    font-size: 30px;
+   margin-left: 25%;
    
 }
 .password{
     border-radius: 2px;
     font-size: 30px;
+    margin-left: 25%;
 
 }
 .button:hover{
@@ -32,14 +39,25 @@
     color: rgb(255, 255, 255);
     background-color: rgb(1, 4, 7);
     border: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 30px;
+    margin-left: 25%;
 }
 .criarconta{
-    color: rgb(246, 247, 248);
+    color: rgb(248, 248, 248);
     margin-left: 2%;
+    border-radius: 10px;
+    font-size: 30px;
+    border: 10px;
+    background-color: black;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
+.email{
+    border-radius: 2px;
+    font-size: 30px;
+    margin-left: 25%;
+
+}
+
+
+

@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-import Style from '@/styles/register.module.css';
-=======
 import Style from '@/styles/Register.module.css';
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 import Head from 'next/head';
 import { useState } from 'react';
 import Link from 'next/link';
 import { getCookie } from 'cookies-next';
-<<<<<<< HEAD
 import { checktoken } from '@/Services/TokenConfig';
-=======
-//import { checktoken } from '@/services/tokenConfig';
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 import { useRouter } from 'next/router';
 
 export default function registerpage() {
@@ -22,6 +14,7 @@ export default function registerpage() {
 
             name: "",
             username: "",
+            email:"",
             password: "",
             confirmpassword: "",
             cpf: ""
@@ -40,7 +33,7 @@ export default function registerpage() {
         console.log(formData);
 
         try {
-            const response = await fetch(`/api/action/user/create`, {
+            const response = await fetch(`/api/action/User/Create`, {
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -50,7 +43,7 @@ export default function registerpage() {
             alert(`$${responseJson.message}`);
 
             if (response.status == 201){
-                router.push(`/user/login`);
+                router.push(`/User/Login`);
             }
         }
         catch (err) {
@@ -70,6 +63,8 @@ export default function registerpage() {
                     <br /><br />
                     <input type="text" placeholder='username' onChange={(event) => { handleFormEdit(event, 'username') }} />
                     <br /><br />
+                    <input type="text" placeholder='E-mail' onChange={(event) => {handleFormEdit(event, 'email')}}/>
+                    <br /><br />
                     <input type="password" placeholder='senha' onChange={(event) => { handleFormEdit(event, 'password') }} />
                     <br /><br />
                     <input type="password" placeholder='confirmar senha' onChange={(event) => { handleFormEdit(event, 'confirmpassword') }} />
@@ -77,7 +72,7 @@ export default function registerpage() {
                     <input type="text" placeholder='cpf' onChange={(event) => { handleFormEdit(event, 'cpf') }} />
                     <br /> <br />
 
-                    <Link href={`/user/login`} >ja tenho uma conta </Link>
+                    <Link className={Style.Criar} href={`/User/Login`} >ja tenho uma conta </Link>
                     <input className={Style.button} type="submit" value='enviar' />
 
                 </div>
@@ -94,11 +89,7 @@ export function getServerSideProps( {req , res }:any){
             throw new Error ('invaled token');
         }
 
-<<<<<<< HEAD
         checktoken(token);
-=======
-       // checktoken(token);
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 
         return {
             redirect: {
