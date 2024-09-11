@@ -1,5 +1,5 @@
 import { NextApiRequest , NextApiResponse } from "next";
-import { findmoviebyname } from "../../Controller/Moviecontroller";
+
 
 export default async ( req: NextApiRequest , res: NextApiResponse ) => {
     if ( req.method != 'GET' ) {
@@ -9,12 +9,4 @@ export default async ( req: NextApiRequest , res: NextApiResponse ) => {
     const { name }:any = req.query;
     
     // Criar o usuário - Chamar controller
-    const response = await findmoviebyname(name);
-
-    if ( response.status == 200 ){
-        return res.status( response.status ).json( { message: response.message , data: response.data} );
-    }
-    else {
-        return res.status( response.status ).json( { message: response.message } );
-    }
 }

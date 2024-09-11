@@ -1,9 +1,9 @@
 
-import {createrusermodel , findusermodelbycpf, findusermodelbyusername , findusermodelbylogin}  from "../model/user";
+import {createrusermodel , findusermodelbycpf, findusermodelbyusername , findusermodelbylogin}  from "../Model/User";
 import { generatetoken } from "../../../Services/TokenConfig";
 
 
-export async function createUser(_username:string , _password:string , _email, _confirmPassword:string , _cpf:string , _name = "") {
+export async function createUser(_username:string , _password:string , _email:string, _confirmPassword:string , _cpf:string , _name = "") {
     // Realizar verificações em atributos Únicos das tabelas.
     // Verificar se os valores já estão cadastrados no banco de dados
     try {

@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 import style from '@/styles/Login.module.css'
-=======
-import style from '@/styles/Login.module.css';
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import { setCookie, getCookie } from 'cookies-next';
-<<<<<<< HEAD
 import { checktoken } from '../../Services/TokenConfig';
-=======
-//import { checktoken } from '@/services/tokenConfig';
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 import { useRouter } from 'next/router';
 
 
@@ -38,7 +30,7 @@ export default function loginPage(){
         console.log(formData);
 
         try{
-            const response = await fetch(`/api/action/user/login` ,{
+            const response = await fetch(`/api/Action/User/Login` ,{
                 method:'POST',
                 headers:{'Content-type': 'application/json'},
                 body: JSON.stringify(formData)
@@ -78,16 +70,13 @@ export default function loginPage(){
             
                 <input className={style.Nome} type="text" placeholder='Nome de usuario' onChange={(event) => {handlerformEdit(event , 'username')}}/>
                 <br /><br />
-<<<<<<< HEAD
                 <input  className={style.email} type="text" placeholder='Seu e-mail' onChange={(event) => {handlerformEdit(event ,'email')}}/>
                 <br /><br />
-=======
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
                 <input className={style.password} type="password" placeholder='senha'onChange={(event) => {handlerformEdit(event , 'password')}}/>
                 <br /><br />
                 <input className={style.button} type="submit" value="login"/>
 
-                <Link className={style.criarconta} href={`/user/register`}>Criar uma conta</Link>
+                <Link className={style.criarconta} href={`/User/Register`}>Criar uma conta</Link>
             </form>
         </main>
     );
@@ -101,16 +90,12 @@ export function getServerSideProps( {req , res }:any){
             throw new Error ('invaled token');
         }
 
-<<<<<<< HEAD
         checktoken(token);
-=======
- //       checktoken(token);
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 
         return {
             redirect: {
                 permanent: false,
-                destination: '/',
+                destination: 'User/Login',
             },
             props: {}
         }

@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 import Style from '@/styles/register.module.css';
-=======
-import Style from '@/styles/Register.module.css';
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 import Head from 'next/head';
 import { useState } from 'react';
 import Link from 'next/link';
 import { getCookie } from 'cookies-next';
-<<<<<<< HEAD
 import { checktoken } from '@/Services/TokenConfig';
-=======
-//import { checktoken } from '@/services/tokenConfig';
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 import { useRouter } from 'next/router';
 
 export default function registerpage() {
@@ -40,7 +32,7 @@ export default function registerpage() {
         console.log(formData);
 
         try {
-            const response = await fetch(`/api/action/user/create`, {
+            const response = await fetch(`/api/Action/User/Create`, {
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -50,7 +42,7 @@ export default function registerpage() {
             alert(`$${responseJson.message}`);
 
             if (response.status == 201){
-                router.push(`/user/login`);
+                router.push(`/User/Login`);
             }
         }
         catch (err) {
@@ -94,16 +86,12 @@ export function getServerSideProps( {req , res }:any){
             throw new Error ('invaled token');
         }
 
-<<<<<<< HEAD
         checktoken(token);
-=======
-       // checktoken(token);
->>>>>>> 8e5925bf09abb680eb37ccb180a66bce81faa3e0
 
         return {
             redirect: {
                 permanent: false,
-                destination: '/',
+                destination: 'User/Login',
             },
             props: {}
         }

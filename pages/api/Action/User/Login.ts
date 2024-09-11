@@ -8,7 +8,7 @@ export default async ( req : NextApiRequest, res : NextApiResponse) =>{
    
     const{username , password} = req.body;
 
-    const response = await login(username , password);
+    const response = await login(username , password , email);
 
 
    // if (response.status == 200){
