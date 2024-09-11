@@ -2,37 +2,49 @@ import style from '@/styles/Login.module.css'
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { checktoken } from '@/Services/TokenConfig';
 import { setCookie, getCookie } from 'cookies-next';
+<<<<<<< HEAD
 import { checktoken } from '../../Services/TokenConfig';
+=======
+>>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
 import { useRouter } from 'next/router';
 
 
-export default function loginPage(){
+export default function loginPage() {
     const router = useRouter();
 
-    const [ formData , setFormData ] = useState(
+    const [formData, setFormData] = useState(
         {
             username: '',
-            password: ''
+            password: '',
+            email:''
         }
     );
 
-    function handlerformEdit(event:any , field:string){
+    function handlerformEdit(event: any, field: string) {
         setFormData({
             ...formData,
-            [field] : event.target.value
+            [field]: event.target.value
         });
     }
 
 
-    async function formSubmit (event:any) {
+    async function formSubmit(event: any) {
         event.preventDefault();
         console.log(formData);
 
+<<<<<<< HEAD
         try{
             const response = await fetch(`/api/Action/User/Login` ,{
                 method:'POST',
                 headers:{'Content-type': 'application/json'},
+=======
+        try {
+            const response = await fetch(`/api/action/User/Login`, {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+>>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
                 body: JSON.stringify(formData)
             });
 
@@ -41,32 +53,33 @@ export default function loginPage(){
 
             setCookie('authorization', responsejson.token);
 
-            if ( response.status != 200 ){
+            if (response.status != 200) {
                 alert(`${responsejson.message}`);
             }
-            else{
+            else {
                 router.push(`/`);
             }
 
 
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
-    }   
-     
-    
+    }
 
-    return(
-    
+
+
+    return (
+
 
         <main className='flex min-h-screen flex-col'>
             <Head>
-                <title>login</title>
+                <title className={style.title}>Login</title>
 
             </Head>
 
             <form className={style.container} onSubmit={formSubmit}>
+<<<<<<< HEAD
             
                 <input className={style.Nome} type="text" placeholder='Nome de usuario' onChange={(event) => {handlerformEdit(event , 'username')}}/>
                 <br /><br />
@@ -76,6 +89,17 @@ export default function loginPage(){
                 <br /><br />
                 <input className={style.button} type="submit" value="login"/>
 
+=======
+
+                <input className={style.Nome} type="text" placeholder='Nome de usuario' onChange={(event) => { handlerformEdit(event, 'username') }} />
+                <br /><br />
+                <input className={style.email} type="text" placeholder='Seu e-mail' onChange={(event) => { handlerformEdit(event, 'email') }} />
+                <br /><br />
+                <input className={style.password} type="password" placeholder='senha' onChange={(event) => { handlerformEdit(event, 'password') }} />
+                <br /><br />
+                <input className={style.button} type="submit" value="login" />
+
+>>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
                 <Link className={style.criarconta} href={`/User/Register`}>Criar uma conta</Link>
             </form>
         </main>
@@ -83,11 +107,11 @@ export default function loginPage(){
 }
 
 
-export function getServerSideProps( {req , res }:any){
-    try{
-        const token = getCookie('authorization' , {req , res} );
-        if ( !token) {
-            throw new Error ('invaled token');
+export function getServerSideProps({ req, res }: any) {
+    try {
+        const token = getCookie('authorization', { req, res });
+        if (!token) {
+            throw new Error('invaled token');
         }
 
         checktoken(token);
@@ -102,9 +126,9 @@ export function getServerSideProps( {req , res }:any){
     }
 
     catch (err) {
-        return{
+        return {
             props: {}
-            
+
         }
     }
 }

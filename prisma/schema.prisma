@@ -27,3 +27,21 @@ model user {
 
 }
 
+model Movie {
+  Id Int @id @unique @default(autoincrement())
+
+  name String @unique
+  releasedate String?
+  imageURL String?
+  videoURL String?
+  description String?
+
+  
+  created_at DateTime @default(now())
+  update_at DateTime @updatedAt
+
+   ratings rating[]
+}
+
+
+

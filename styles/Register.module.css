@@ -1,18 +1,17 @@
 .container{
-    background-color: aqua;
+ 
     height: 600px;
     width: 600px;
-    margin-left: 28%;
-    border: 1px solid grey;
-    border-radius: 8px;
+    margin-left: 40%;
+    border: 1px solid rgb(5, 1, 1);
     margin-top: 70px;
     padding: 2%;
-    box-shadow: 10px 10px 10px 10px;
     font-size: 30px;
+    
 
 }
 .button{
-    margin-left: 100px;
+    margin-left: 1%;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: azure;
     border-radius: 20px;
@@ -25,6 +24,11 @@
     cursor: pointer;
 }
 #main{
-    background-image: url('/pipoca.jpg');
+    background-image: url('/dino.black.jpg');
     background-size: cover;
+
+}
+
+.Criar{
+    color: azure;
 }
