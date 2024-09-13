@@ -24,11 +24,11 @@ model User {
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-
+  ratings rating[]
 }
 
 model Game {
-  Id Int @id @unique @default(autoincrement())
+  id Int @id @unique @default(autoincrement())
 
   name String @unique
   releasedate String
@@ -44,7 +44,7 @@ model Game {
   created_at DateTime @default(now())
   update_at DateTime @updatedAt
 
-  // ratings rating[]
+   ratings rating[]
 }
 
 model rating{
@@ -58,9 +58,9 @@ model rating{
   update_at DateTime @updatedAt
 
  userId Int
- user user @relation(fields: [userId] , references: [id])
- movieId Int 
- movie movie @relation(fields: [movieId] , references: [id])
+ user User @relation(fields: [userId] , references: [id])
+ gameId Int 
+ game Game @relation(fields: [gameId] , references: [id])
 
 }
 

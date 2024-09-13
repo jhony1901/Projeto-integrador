@@ -16,11 +16,7 @@ export default function Home() {
   // funcao para receber os dados dos filmes
   async function fetchData() {
     try {
-<<<<<<< Updated upstream
-      const response = await fetch(`/api/Action/Game/Select`, {
-=======
-      const response = await fetch(`/api/action/Game/select`, {
->>>>>>> Stashed changes
+      const response = await fetch(`/api/action/Game/Select`, {
         method: 'GET',
       })
 
@@ -40,13 +36,8 @@ export default function Home() {
 
   }, [])
 
-<<<<<<< Updated upstream
   function GameClick(Gamename: string) {
     router.push('/Game/' + Gamename);
-=======
-  function gameClick(gamename: string) {
-    router.push('/Game/' + gamename);
->>>>>>> Stashed changes
   }
 
   return (
@@ -60,11 +51,7 @@ export default function Home() {
 
 
         <div>
-<<<<<<< Updated upstream
-          <Link className={styles.Criar} href={'/Game/create'} >Criar jogo </Link>
-=======
-          <Link className={styles.Criar} href={'/Game/Create'} >Criar Jogo </Link>
->>>>>>> Stashed changes
+          <Link className={styles.Criar} href={'/Game/Create'} >Criar jogo </Link>
           <button className={styles.button}>Logout</button>
         </div>
       </nav>
@@ -81,7 +68,6 @@ export default function Home() {
 
           {data != undefined && data instanceof Array ?
 
-<<<<<<< Updated upstream
             data.map(Game => (
 
               <div onClick={() => { GameClick(Game.name) }} className={styles.Card}>
@@ -89,15 +75,6 @@ export default function Home() {
                 <div className={styles.Cardinfos}>
                   <h2>{Game.name}</h2>
                   <p> {Game.releasedate}</p>
-=======
-            data.map(game => (
-
-              <div onClick={() => {gameClick(game.name) }} className={styles.Card}>
-                <img src={game.imageURL} alt="" className={styles.cardImg} />
-                <div className={styles.Cardinfos}>
-                  <h2>{game.name}</h2>
-                  <p> {game.releasedate}</p>
->>>>>>> Stashed changes
                   <p>Generos</p>
                 </div>
               </div>

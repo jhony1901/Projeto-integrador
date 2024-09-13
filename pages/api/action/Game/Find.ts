@@ -1,10 +1,7 @@
 import { NextApiRequest , NextApiResponse } from "next";
-<<<<<<<< Updated upstream:pages/api/Action/Game/Find.ts
-import { findGameModelbyname } from "../../Controller/GameController";
-
-========
+import { findGameModelbyname } from "../../Controller/GameController
 import { findGamebyname } from "../../Controller/Gamecontroller";
->>>>>>>> Stashed changes:pages/api/action/Game/Find.ts
+
 
 export default async ( req: NextApiRequest , res: NextApiResponse ) => {
     if ( req.method != 'GET' ) {
@@ -12,12 +9,10 @@ export default async ( req: NextApiRequest , res: NextApiResponse ) => {
     }
 
     const { name }:any = req.query;
-<<<<<<<< Updated upstream:pages/api/Action/Game/Find.ts
-========
+
     
     // Criar o usuário - Chamar controller
     const response = await findGamebyname(name);
->>>>>>>> Stashed changes:pages/api/action/Game/Find.ts
 
     // Criar o usuário - Chamar controller
 

@@ -8,9 +8,9 @@ export default async ( req: NextApiRequest , res: NextApiResponse) =>{
 
     }
 
-    const { value , comment , username , moviename,} = req.body;
+    const { value , comment , username , gamename,} = req.body;
 
-    const response = await createRating(value , username , moviename , comment);
+    const response = await createRating(value , username , gamename , comment);
 
     return res.status ( response.status).json( {message : response.message});
 }

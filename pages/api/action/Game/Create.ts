@@ -10,9 +10,11 @@ export default async ( req: NextApiRequest , res: NextApiResponse) =>{
 
     }
     
-    const { name , description, releasedate ,developer,destributor, price , link , plataform, imageURL , videoURL, } = req.body
+    const { name , description, releasedate ,developer,distributor, price , link , plataform, imageURL , videoURL, } = req.body
 
-    const response = await creatGame (  name , description ,  releasedate  , developer , destributor , price , link, plataform ,imageURL , videoURL ,   );
+    console.log(req.body)
+    const response = await createGame (  name , releasedate , description  , developer , distributor , price , link, plataform ,imageURL , videoURL );
+  
 
     return res.status(response.status).json({message : response.message });
 }

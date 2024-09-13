@@ -33,7 +33,7 @@ export default function registerpage() {
         console.log(formData);
 
         try {
-            const response = await fetch(`/api/Action/User/Create`, {
+            const response = await fetch(`/api/action/User/Create`, {
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(formData)

@@ -31,7 +31,7 @@ export default function loginPage() {
         console.log(formData);
 
         try{
-            const response = await fetch(`/api/Action/User/Login` ,{
+            const response = await fetch(`/api/action/User/Login` ,{
                 method:'POST',
                 headers:{'Content-type': 'application/json'},
                 body: JSON.stringify(formData)
