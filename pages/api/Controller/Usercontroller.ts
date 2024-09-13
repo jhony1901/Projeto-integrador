@@ -1,17 +1,9 @@
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
 import {createrusermodel , findusermodelbycpf, findusermodelbyusername , findusermodelbylogin}  from "../Model/User";
 import { generatetoken } from "../../../Services/TokenConfig";
 
 
-<<<<<<< HEAD
 export async function createUser(_username:string , _email:string, _password:string , _confirmPassword:string , _cpf:string , _name = "") {
-=======
-export async function createUser(_username:string , _password:string , _email:string, _confirmPassword:string , _cpf:string , _name = "") {
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
     // Realizar verificações em atributos Únicos das tabelas.
     // Verificar se os valores já estão cadastrados no banco de dados
     try {
@@ -31,11 +23,7 @@ export async function createUser(_username:string , _password:string , _email:st
             return{ status:403, message : "username already registered"};
         }
 
-<<<<<<< HEAD
         const response = await createrusermodel( _name , _username , _email , _password , _cpf );
-=======
-        const response = await createrusermodel( _name , _username ,_email, _password , _cpf );
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
 
         return {status:201, message:'User registered', data:response  };
 
@@ -46,17 +34,10 @@ export async function createUser(_username:string , _password:string , _email:st
 }
 
 
-<<<<<<< HEAD
 export async function login(_username: string , _password: string , _email:string){
     try{
 
         const userlogin = await findusermodelbylogin(_username , _password ,_email );
-=======
-export async function login(_username: string , _password: string, _email:string ){
-    try{
-
-        const userlogin = await findusermodelbylogin(_username , _password , _email );
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
 
         if (userlogin == undefined){
             return {status: 404, message: 'incorrect username or password' };

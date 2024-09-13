@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import Style from '@/styles/register.module.css';
-=======
 import Style from '@/styles/Register.module.css';
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
 import Head from 'next/head';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -37,11 +33,7 @@ export default function registerpage() {
         console.log(formData);
 
         try {
-<<<<<<< HEAD
             const response = await fetch(`/api/Action/User/Create`, {
-=======
-            const response = await fetch(`/api/action/User/Create`, {
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -102,7 +94,7 @@ export function getServerSideProps( {req , res }:any){
         return {
             redirect: {
                 permanent: false,
-                destination: 'User/Login',
+                destination: '/',
             },
             props: {}
         }

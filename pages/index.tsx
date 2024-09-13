@@ -116,11 +116,7 @@ export function getServerSideProps({ req, res }: any) {
     return {
       redirect: {
         permanent: false,
-<<<<<<< HEAD
-        destination: '/User/Login',
-=======
         destination: '/',
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
       },
       props: {}
 

@@ -4,10 +4,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { checktoken } from '@/Services/TokenConfig';
 import { setCookie, getCookie } from 'cookies-next';
-<<<<<<< HEAD
-import { checktoken } from '../../Services/TokenConfig';
-=======
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
 import { useRouter } from 'next/router';
 
 
@@ -34,17 +30,10 @@ export default function loginPage() {
         event.preventDefault();
         console.log(formData);
 
-<<<<<<< HEAD
         try{
             const response = await fetch(`/api/Action/User/Login` ,{
                 method:'POST',
                 headers:{'Content-type': 'application/json'},
-=======
-        try {
-            const response = await fetch(`/api/action/User/Login`, {
-                method: 'POST',
-                headers: { 'Content-type': 'application/json' },
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
                 body: JSON.stringify(formData)
             });
 
@@ -79,7 +68,6 @@ export default function loginPage() {
             </Head>
 
             <form className={style.container} onSubmit={formSubmit}>
-<<<<<<< HEAD
             
                 <input className={style.Nome} type="text" placeholder='Nome de usuario' onChange={(event) => {handlerformEdit(event , 'username')}}/>
                 <br /><br />
@@ -89,17 +77,6 @@ export default function loginPage() {
                 <br /><br />
                 <input className={style.button} type="submit" value="login"/>
 
-=======
-
-                <input className={style.Nome} type="text" placeholder='Nome de usuario' onChange={(event) => { handlerformEdit(event, 'username') }} />
-                <br /><br />
-                <input className={style.email} type="text" placeholder='Seu e-mail' onChange={(event) => { handlerformEdit(event, 'email') }} />
-                <br /><br />
-                <input className={style.password} type="password" placeholder='senha' onChange={(event) => { handlerformEdit(event, 'password') }} />
-                <br /><br />
-                <input className={style.button} type="submit" value="login" />
-
->>>>>>> 8ee33406e610535eb247b3928141f0a5f6bcd18a
                 <Link className={style.criarconta} href={`/User/Register`}>Criar uma conta</Link>
             </form>
         </main>
@@ -119,7 +96,7 @@ export function getServerSideProps({ req, res }: any) {
         return {
             redirect: {
                 permanent: false,
-                destination: 'User/Login',
+                destination: '/',
             },
             props: {}
         }
