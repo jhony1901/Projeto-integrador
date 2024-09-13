@@ -1,7 +1,7 @@
 import { prisma } from "@/db";
 
-export async function createMoviemodel( _name:string , _releasedate:string , _imageURL:string ,  _videoURL:string , _description:string ) {
-    const movie = await prisma.Movie.create({ 
+export async function createGamemodel( _name:string , _releasedate:string , _imageURL:string ,  _videoURL:string , _description:string ) {
+    const Game = await prisma.Game.create({ 
         data:{
             name: _name,
             releasedate: _releasedate,
@@ -12,13 +12,13 @@ export async function createMoviemodel( _name:string , _releasedate:string , _im
 
         }
     })
-    return movie;
+    return Game;
 }
 
 
-export async function findmovieModelbyname (_name:string ){
+export async function findGameModelbyname (_name:string ){
 
-    const movie = await prisma.Movie.findUnique({
+    const Game = await prisma.Game.findUnique({
         where: {
             name : _name
         },
@@ -31,13 +31,13 @@ export async function findmovieModelbyname (_name:string ){
         }
     
     });
-    return movie;
+    return Game;
     
 }
 
-export async function selectMoviesModel() {
-    const movies = await prisma.Movie.findMany();
+export async function selectGameModel() {
+    const Game = await prisma.Game.findMany();
 
-    return movies;
+    return Game;
     
 }

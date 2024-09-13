@@ -2,7 +2,7 @@ import Head from "next/head"
 import style from '@/styles/Createmovie.module.css'
 import { useState } from "react"
 
-export default function createMovie(){
+export default function createGame(){
     const [ formData , setformaData] = useState(
         {
             name : '',
@@ -22,7 +22,7 @@ export default function createMovie(){
     async function formSubmit(event:any) {
         
         try{
-            const response = await fetch(`/api/action/Movie/Create`,
+            const response = await fetch(`/api/action/Game/Create`,
                 {
                     method:'POST',
                     headers: {'content-type' : 'application/json'},
@@ -44,7 +44,7 @@ export default function createMovie(){
     return(
         <main  className='flex min-h-screen flex-col'>
             <Head>
-                <title>Cadastro de Filmes</title>
+                <title>Cadastro de Jogos</title>
             </Head>
 
             <div>

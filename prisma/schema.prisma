@@ -13,7 +13,7 @@ datasource db {
   url      = "file:./dev.db"
 }
 
-model user {
+model User {
   id Int @id @unique @default(autoincrement())
 
   name String ?
@@ -27,7 +27,7 @@ model user {
 
 }
 
-model Movie {
+model Game {
   Id Int @id @unique @default(autoincrement())
 
   name String @unique
@@ -41,6 +41,23 @@ model Movie {
   update_at DateTime @updatedAt
 
    ratings rating[]
+}
+
+model rating{
+  
+  id Int @id @unique @default(autoincrement())
+
+  value Int
+  coment String?
+
+  created_at DateTime @default(now())
+  update_at DateTime @updatedAt
+
+ userId Int
+ user user @relation(fields: [userId] , references: [id])
+ movieId Int 
+ movie movie @relation(fields: [movieId] , references: [id])
+
 }
 
 

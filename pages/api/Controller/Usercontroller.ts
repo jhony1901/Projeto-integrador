@@ -3,7 +3,7 @@ import {createrusermodel , findusermodelbycpf, findusermodelbyusername , finduse
 import { generatetoken } from "../../../Services/TokenConfig";
 
 
-export async function createUser(_username:string , _email:string, _password:string , _confirmPassword:string , _cpf:string , _name = "") {
+export async function createUser(_username:string , _password:string , _email:string, _confirmPassword:string , _cpf:string , _name = "") {
     // Realizar verificações em atributos Únicos das tabelas.
     // Verificar se os valores já estão cadastrados no banco de dados
     try {
@@ -23,7 +23,7 @@ export async function createUser(_username:string , _email:string, _password:str
             return{ status:403, message : "username already registered"};
         }
 
-        const response = await createrusermodel( _name , _username , _email , _password , _cpf );
+        const response = await createrusermodel( _name , _username ,_email, _password , _cpf );
 
         return {status:201, message:'User registered', data:response  };
 
@@ -34,10 +34,10 @@ export async function createUser(_username:string , _email:string, _password:str
 }
 
 
-export async function login(_username: string , _password: string , _email:string){
+export async function login(_username: string , _password: string, _email:string ){
     try{
 
-        const userlogin = await findusermodelbylogin(_username , _password ,_email );
+        const userlogin = await findusermodelbylogin(_username , _password , _email );
 
         if (userlogin == undefined){
             return {status: 404, message: 'incorrect username or password' };

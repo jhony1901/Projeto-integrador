@@ -16,7 +16,7 @@ export default function Home() {
   // funcao para receber os dados dos filmes
   async function fetchData() {
     try {
-      const response = await fetch(`/api/action/movie/select`, {
+      const response = await fetch(`/api/Action/Game/Select`, {
         method: 'GET',
       })
 
@@ -36,8 +36,8 @@ export default function Home() {
 
   }, [])
 
-  function movieClick(moviename: string) {
-    router.push('/movie/' + moviename);
+  function GameClick(Gamename: string) {
+    router.push('/Game/' + Gamename);
   }
 
   return (
@@ -51,7 +51,7 @@ export default function Home() {
 
 
         <div>
-          <Link className={styles.Criar} href={'/movie/create'} >Criar Filme </Link>
+          <Link className={styles.Criar} href={'/Game/create'} >Criar jogo </Link>
           <button className={styles.button}>Logout</button>
         </div>
       </nav>
@@ -68,13 +68,13 @@ export default function Home() {
 
           {data != undefined && data instanceof Array ?
 
-            data.map(movie => (
+            data.map(Game => (
 
-              <div onClick={() => { movieClick(movie.name) }} className={styles.Card}>
-                <img src={movie.imageURL} alt="" className={styles.cardImg} />
+              <div onClick={() => { GameClick(Game.name) }} className={styles.Card}>
+                <img src={Game.imageURL} alt="" className={styles.cardImg} />
                 <div className={styles.Cardinfos}>
-                  <h2>{movie.name}</h2>
-                  <p> {movie.releasedate}</p>
+                  <h2>{Game.name}</h2>
+                  <p> {Game.releasedate}</p>
                   <p>Generos</p>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function Home() {
 
             :
 
-            <p>No movies found</p>
+            <p>No game found</p>
 
           }
 

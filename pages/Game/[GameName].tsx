@@ -1,7 +1,7 @@
-import styles from '@/styles/Movie.module.css'
+import styles from '@/styles/Game.module.css'
 
 
-export default function movie({ movieName }: any) {
+export default function Game({ GameName }: any) {
     return (
         <main id={styles.main} className='flex min-h-screen flex-col'>
             <div className={styles.page}>
@@ -9,7 +9,7 @@ export default function movie({ movieName }: any) {
                     <img src="/baudamorte.jpg" className={styles.Img} />
 
                     <div className={styles.movieInfos}>
-                        <h2>Nome do Filme</h2>
+                        <h2>Nome do Jogo</h2>
                         <p>Data </p>
                         <p>Descriçao</p>
                         <p>Generos</p>
@@ -28,9 +28,9 @@ export default function movie({ movieName }: any) {
 }
 
 export function getServerSideProps(context: any) {
-    const { movieName } = context.query;
+    const { GameName } = context.query;
 
     return {
-        props: { movieName }
+        props: { GameName }
     }
 }
