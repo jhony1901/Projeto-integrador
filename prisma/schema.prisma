@@ -31,16 +31,20 @@ model Game {
   Id Int @id @unique @default(autoincrement())
 
   name String @unique
-  releasedate String?
-  imageURL String?
-  videoURL String?
+  releasedate String
   description String?
-
+  developer String
+  distributor String
+  price String
+  link String?
+  platform String
+  image String?
+  video String?
   
   created_at DateTime @default(now())
   update_at DateTime @updatedAt
 
-   ratings rating[]
+  // ratings rating[]
 }
 
 model rating{

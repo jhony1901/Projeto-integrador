@@ -1,5 +1,5 @@
 import Head from "next/head"
-import style from '@/styles/Createmovie.module.css'
+import style from '@/styles/CreateGame.module.css'
 import { useState } from "react"
 
 export default function createGame(){
@@ -7,9 +7,16 @@ export default function createGame(){
         {
             name : '',
             realeseDate :'',
-            imageURL: '',
-            videoURL : '',
-            description : ''
+            description : '',
+            desenvolvedor: '',
+            distribuidor: '',
+            preco: '',
+            link: '',
+            platform: '',
+            Image: '',
+            video: ''
+
+
         }
     );
 
@@ -53,9 +60,9 @@ export default function createGame(){
                     <p className={style.date}>Data de lançamento<input type="date" onChange={(event)=>{handleformEdit(event,'releasedate')}}/></p>
                      <p className={style.image}>imagem: <input type="file"/></p>
                      <br /><br />
-                     <input type="text" placeholder="link para video(youtube) do filme" onChange={(event)=>{handleformEdit(event,'videoURL')}}/>
+                     <input type="text" placeholder="link do Jogo" onChange={(event)=>{handleformEdit(event,'videoURL')}}/>
                      <br /><br />
-                     <textarea className= {style.input} placeholder="Descrição do filme" onChange={(event)=>{handleformEdit(event,'description')}}/>
+                     <textarea className= {style.input} placeholder="Descrição do Jogo" onChange={(event)=>{handleformEdit(event,'description')}}/>
                      <br /><br />
                      <input className={style.button} type="submit" value="enviar" />
                 </form>
